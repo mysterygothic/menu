@@ -252,27 +252,40 @@
             border: 2px solid rgba(212, 114, 34, 0.4);
         }
 
-     <!-- Location Section -->
-<div id="location" class="content-section">
-    <div class="location-section">
-        <h2 class="location-title">موقعنا</h2>
-        
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps?q=32.078611,36.088417&hl=ar&z=16&output=embed" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
+        /* Location Section */
+        .location-section {
+            text-align: center;
+        }
 
-        <div class="address-box">
-            <div class="address-text">📍 الزرقاء</div>
-            <div class="address-text" style="font-size: 1.2em; color: #ccc;">33HQ+F94, Zarqa</div>
-            <a href="https://www.google.com/maps?q=32.078611,36.088417" target="_blank" class="directions-btn">احصل على الاتجاهات</a>
-        </div>
-    </div>
-</div>
+        .location-title {
+            font-size: 2.5em;
+            color: #d47222;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .map-container {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 114, 34, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .address-box {
+            background: linear-gradient(135deg, rgba(212, 114, 34, 0.15) 0%, rgba(212, 114, 34, 0.05) 100%);
+            border: 2px solid rgba(212, 114, 34, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
 
         .address-text {
             font-size: 1.5em;
@@ -413,12 +426,36 @@
         <!-- Order Section -->
         <div id="order" class="content-section">
             <div class="order-section">
-                <h2 class="order-title">Order Now! اطلب الآن</h2>
+                <h2 class="order-title">اطلب وجبتك الآن</h2>
                 
+                <div class="delivery-grid">
+                    <div class="delivery-card">
+                        <div class="delivery-icon">🍔</div>
+                        <div class="delivery-name">Talabat</div>
+                        <a href="https://www.talabat.com/jordan" target="_blank" class="delivery-link">اطلب الآن</a>
+                    </div>
+                    
+                    <div class="delivery-card">
+                        <div class="delivery-icon">🛵</div>
+                        <div class="delivery-name">Jahez</div>
+                        <a href="https://www.jahez.com" target="_blank" class="delivery-link">اطلب الآن</a>
+                    </div>
+                    
+                    <div class="delivery-card">
+                        <div class="delivery-icon">🍕</div>
+                        <div class="delivery-name">Careem Now</div>
+                        <a href="https://www.careem.com/now" target="_blank" class="delivery-link">اطلب الآن</a>
+                    </div>
+                    
+                    <div class="delivery-card">
+                        <div class="delivery-icon">🚚</div>
+                        <div class="delivery-name">Delivery</div>
+                        <a href="https://www.delivery.jo" target="_blank" class="delivery-link">اطلب الآن</a>
+                    </div>
                 </div>
 
                 <div class="phone-section">
-                    <div class="phone-title"> Call us اتصل بنا مباشرة</div>
+                    <div class="phone-title">أو اتصل بنا مباشرة</div>
                     <div class="phone-numbers">
                         <a href="tel:0791504450" class="phone-number">0791504450</a>
                         <a href="tel:0781504450" class="phone-number">0781504450</a>
@@ -430,11 +467,11 @@
         <!-- Location Section -->
         <div id="location" class="content-section">
             <div class="location-section">
-                <h2 class="location-title">موقعنا</h2>
+                <h2 class="location-title">Our Location موقعنا</h2>
                 
                 <div class="map-container">
                     <iframe 
-                        src="https://www.google.com/maps?q=32.078611,36.088417"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14690.687259620455!2d36.0855263!3d32.0786667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDA0JzQzLjIiTiAzNsKwMDUnMTcuNCJF!5e0!3m2!1sen!2sus!4v1689840000000!5m2!1sen!2sus"
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
@@ -443,7 +480,7 @@
 
                 <div class="address-box">
                     <div class="address-text">📍 الزرقاء - مربع المسلخ</div>
-                    <div class="address-text" style="font-size: 1.2em; color: #ccc;"</div>
+                    <div class="address-text" style="font-size: 1.2em; color: #ccc;"> Zarqa</div>
                     <a href="https://maps.app.goo.gl/z1JGNCHDqNyy5JkeA" target="_blank" class="directions-btn">احصل على الاتجاهات</a>
                 </div>
             </div>
