@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطعم ومطبخ الشيخ - Menu</title>
+    <title>مطعم ومطبخ الشيخ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -18,21 +18,21 @@
             font-family: 'Tajawal', Arial, sans-serif;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             min-height: 100vh;
-            padding: 20px;
             color: #fff;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 20px;
         }
 
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 40px 20px 30px;
             background: linear-gradient(135deg, rgba(212, 114, 34, 0.15) 0%, rgba(212, 114, 34, 0.05) 100%);
             border-radius: 20px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(212, 114, 34, 0.2);
         }
@@ -54,11 +54,68 @@
             text-transform: uppercase;
         }
 
+        .decorative-line {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d47222, transparent);
+            margin: 25px auto;
+        }
+
+        /* Navigation */
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, rgba(212, 114, 34, 0.2) 0%, rgba(212, 114, 34, 0.1) 100%);
+            border: 2px solid rgba(212, 114, 34, 0.3);
+            color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-btn:hover {
+            background: linear-gradient(135deg, rgba(212, 114, 34, 0.4) 0%, rgba(212, 114, 34, 0.2) 100%);
+            border-color: #d47222;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 114, 34, 0.4);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #d47222 0%, #e88230 100%);
+            border-color: #d47222;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Menu Section */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 40px;
-            margin-bottom: 50px;
         }
 
         .menu-item {
@@ -71,28 +128,10 @@
             position: relative;
         }
 
-        .menu-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(212, 114, 34, 0.1) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
-            z-index: 1;
-        }
-
         .menu-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 60px rgba(212, 114, 34, 0.3);
             border-color: rgba(212, 114, 34, 0.4);
-        }
-
-        .menu-item:hover::before {
-            opacity: 1;
         }
 
         .menu-image-container {
@@ -117,88 +156,206 @@
             transform: scale(1.05);
         }
 
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+        /* Order Section */
+        .order-section {
+            text-align: center;
         }
 
-        .menu-item:hover .image-overlay {
-            opacity: 1;
+        .order-title {
+            font-size: 2.5em;
+            color: #d47222;
+            margin-bottom: 30px;
+            font-weight: 700;
         }
 
-        .download-btn {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(212, 114, 34, 0.95);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .delivery-card {
+            background: linear-gradient(135deg, rgba(212, 114, 34, 0.15) 0%, rgba(212, 114, 34, 0.05) 100%);
+            border: 2px solid rgba(212, 114, 34, 0.3);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .delivery-card:hover {
+            transform: translateY(-10px);
+            border-color: #d47222;
+            box-shadow: 0 15px 40px rgba(212, 114, 34, 0.3);
+        }
+
+        .delivery-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .delivery-name {
+            font-size: 1.5em;
             font-weight: 600;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 20px rgba(212, 114, 34, 0.4);
-            z-index: 2;
+            color: #fff;
+            margin-bottom: 10px;
         }
 
-        .menu-item:hover .download-btn {
-            opacity: 1;
-            transform: translateY(0);
+        .delivery-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #d47222;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .download-btn:hover {
+        .delivery-link:hover {
+            background: #e88230;
+            box-shadow: 0 5px 20px rgba(212, 114, 34, 0.5);
+        }
+
+        .phone-section {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 114, 34, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .phone-title {
+            font-size: 2em;
+            color: #d47222;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .phone-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .phone-number {
+            font-size: 1.8em;
+            color: #fff;
+            font-weight: 600;
+            direction: ltr;
+            padding: 15px 30px;
+            background: rgba(212, 114, 34, 0.2);
+            border-radius: 15px;
+            border: 2px solid rgba(212, 114, 34, 0.4);
+        }
+
+        /* Location Section */
+        .location-section {
+            text-align: center;
+        }
+
+        .location-title {
+            font-size: 2.5em;
+            color: #d47222;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .map-container {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 114, 34, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .address-box {
+            background: linear-gradient(135deg, rgba(212, 114, 34, 0.15) 0%, rgba(212, 114, 34, 0.05) 100%);
+            border: 2px solid rgba(212, 114, 34, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .address-text {
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .directions-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #d47222;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .directions-btn:hover {
             background: #e88230;
             box-shadow: 0 8px 30px rgba(212, 114, 34, 0.6);
+            transform: translateY(-3px);
         }
 
-        footer {
+        /* Review Section */
+        .review-section {
             text-align: center;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            border: 1px solid rgba(212, 114, 34, 0.15);
+            padding: 60px 20px;
         }
 
-        .contact-info {
+        .review-title {
+            font-size: 2.5em;
             color: #d47222;
-            font-size: 1.2em;
-            font-weight: 500;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        .phone {
-            color: #f5f5f5;
-            font-size: 1.1em;
-            margin: 8px 0;
-        }
-
-        .location {
+        .review-subtitle {
+            font-size: 1.3em;
             color: #ccc;
-            font-size: 1em;
-            margin-top: 15px;
+            margin-bottom: 40px;
         }
 
-        .decorative-line {
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #d47222, transparent);
-            margin: 25px auto;
+        .stars {
+            font-size: 4em;
+            margin-bottom: 40px;
+            color: #ffc107;
+        }
+
+        .review-btn {
+            display: inline-block;
+            padding: 20px 60px;
+            background: linear-gradient(135deg, #d47222 0%, #e88230 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(212, 114, 34, 0.4);
+            text-transform: uppercase;
+        }
+
+        .review-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(212, 114, 34, 0.6);
         }
 
         @media (max-width: 768px) {
-            .menu-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
             h1 {
                 font-size: 2.5em;
             }
@@ -207,16 +364,26 @@
                 font-size: 1em;
             }
 
-            header {
-                padding: 30px 15px;
+            .nav-buttons {
+                grid-template-columns: repeat(2, 1fr);
             }
-        }
 
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #d47222;
-            font-size: 1.2em;
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-numbers {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .phone-number {
+                font-size: 1.5em;
+            }
+
+            .map-container iframe {
+                height: 350px;
+            }
         }
     </style>
 </head>
@@ -225,68 +392,126 @@
         <header>
             <h1>مطعم ومطبخ الشيخ</h1>
             <div class="decorative-line"></div>
-            <p class="subtitle">Menu - المنيو</p>
+            <p class="subtitle">Restaurant & Kitchen</p>
         </header>
 
-        <div class="menu-grid">
-            <div class="menu-item">
-                <div class="menu-image-container">
-                    <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/1.JPG" alt="Menu Page 1" class="menu-image" loading="lazy">
-                    <div class="image-overlay"></div>
-                    <a href="https://raw.githubusercontent.com/mysterygothic/menu/main/1.JPG" download="menu-page-1.jpg" class="download-btn">تحميل</a>
-                </div>
-            </div>
+        <div class="nav-buttons">
+            <button class="nav-btn active" onclick="showSection('menu')">المنيو<br>MENU</button>
+            <button class="nav-btn" onclick="showSection('order')">اطلب الآن<br>ORDER NOW</button>
+            <button class="nav-btn" onclick="showSection('location')">الموقع<br>LOCATION</button>
+            <button class="nav-btn" onclick="showSection('review')">قيمنا<br>REVIEW US</button>
+        </div>
 
-            <div class="menu-item">
-                <div class="menu-image-container">
-                    <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/2.JPG" alt="Menu Page 2" class="menu-image" loading="lazy">
-                    <div class="image-overlay"></div>
-                    <a href="https://raw.githubusercontent.com/mysterygothic/menu/main/3.JPG" download="menu-page-2.jpg" class="download-btn">تحميل</a>
+        <!-- Menu Section -->
+        <div id="menu" class="content-section active">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image-container">
+                        <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/1.JPG" alt="Menu Page 1" class="menu-image" loading="lazy">
+                    </div>
                 </div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-image-container">
-                    <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/3.JPG" alt="Menu Page 3" class="menu-image" loading="lazy">
-                    <div class="image-overlay"></div>
-                    <a href="https://raw.githubusercontent.com/mysterygothic/menu/main/3.JPG" download="menu-page-3.jpg" class="download-btn">تحميل</a>
+                <div class="menu-item">
+                    <div class="menu-image-container">
+                        <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/2.JPG" alt="Menu Page 2" class="menu-image" loading="lazy">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image-container">
+                        <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/3.JPG" alt="Menu Page 3" class="menu-image" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
 
-        <footer>
-            <div class="contact-info">للحجز والتواصل</div>
-            <div class="phone">📞 077 150 4450</div>
-            <div class="phone">📞 078 150 4450 / 079 150 4450</div>
-            <div class="decorative-line"></div>
-            <div class="location">📍 الموقع: الزرقاء - مربع المساخ</div>
-        </footer>
+        <!-- Order Section -->
+        <div id="order" class="content-section">
+            <div class="order-section">
+                <h2 class="order-title">اطلب وجبتك الآن</h2>
+                
+                </div>
+
+                <div class="phone-section">
+                    <div class="phone-title">أو اتصل بنا مباشرة</div>
+                    <div class="phone-numbers">
+                        <a href="tel:0791504450" class="phone-number">0791504450</a>
+                        <a href="tel:0781504450" class="phone-number">0781504450</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Section -->
+        <div id="location" class="content-section">
+            <div class="location-section">
+                <h2 class="location-title">موقعنا</h2>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.7658!2d36.0833!3d32.0766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b6003644a5a5f%3A0x7f4973a56cad626!2s33GM%2BV8C%2C%20Zarqa!5e0!3m2!1sen!2sjo!4v1234567890"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="address-box">
+                    <div class="address-text">📍 الزرقاء - مربع المسلخ</div>
+                    <div class="address-text" style="font-size: 1.2em; color: #ccc;">33GM+V8C, Zarqa</div>
+                    <a href="https://maps.app.goo.gl/z1JGNCHDqNyy5JkeA" target="_blank" class="directions-btn">احصل على الاتجاهات</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Section -->
+        <div id="review" class="content-section">
+            <div class="review-section">
+                <h2 class="review-title">شاركنا تجربتك</h2>
+                <p class="review-subtitle">رأيك يهمنا! ساعدنا في تحسين خدماتنا</p>
+                
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                
+                <a href="https://search.google.com/local/writereview?placeid=ChIJX1pNZABlGxURZrLabKVzSX8" target="_blank" class="review-btn">
+                    قيمنا على جوجل
+                </a>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Add smooth scroll behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
             });
-        });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-        // Add loading animation
+        // Animation on load
         window.addEventListener('load', () => {
-            document.querySelectorAll('.menu-item').forEach((item, index) => {
+            document.querySelectorAll('.nav-btn').forEach((btn, index) => {
                 setTimeout(() => {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(30px)';
-                    item.style.transition = 'all 0.6s ease';
+                    btn.style.opacity = '0';
+                    btn.style.transform = 'translateY(20px)';
+                    btn.style.transition = 'all 0.5s ease';
                     
                     setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
+                        btn.style.opacity = '1';
+                        btn.style.transform = 'translateY(0)';
                     }, 50);
-                }, index * 150);
+                }, index * 100);
             });
         });
     </script>
