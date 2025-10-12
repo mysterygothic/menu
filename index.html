@@ -465,15 +465,17 @@
     <script>
         const WORKER_URL = 'https://lively-river-cdc1.zlmsn3mk.workers.dev/';
 
-        async function sendToTelegram(message) {
+        async function sendToTelegram(data) {
             try {
-                await fetch(WORKER_URL, {
+                const response = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message })
+                    body: JSON.stringify(data)
                 });
+                return await response.json();
             } catch (error) {
                 console.error('Error sending to Telegram:', error);
+                return null;
             }
         }
 
@@ -511,10 +513,10 @@
 👤 User Agent: ${info.userAgent}
             `.trim();
             
-            sendToTelegram(message);
+            sendToTelegram({ type: 'action', message });
         }
 
-        window.addEventListener('load', () => {
+        window.addEventListener('load', async () => {
             const info = getVisitorInfo();
             const message = `
 🎉 <b>New Visitor on Restaurant Website!</b>
@@ -527,7 +529,7 @@
 👤 User Agent: ${info.userAgent}
             `.trim();
             
-            sendToTelegram(message);
+            await sendToTelegram({ type: 'visit', message });
 
             document.querySelectorAll('.nav-btn').forEach((btn, index) => {
                 setTimeout(() => {
