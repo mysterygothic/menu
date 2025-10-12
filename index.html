@@ -569,5 +569,68 @@
             trackAction(`Viewed ${sectionNames[sectionId]} Section`);
         }
     </script>
+    <!-- Add this footer before the closing </body> tag -->
+<footer class="footer">
+    <div class="social-icons">
+        <a href="https://wa.me/962791504450" target="_blank" aria-label="WhatsApp">
+            <img src="whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/alsheikh_resturant/" target="_blank" aria-label="Instagram">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/share/1BbwHChiaF/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+    </div>
+    <p class="footer-text">© 2025 مطعم ومطبخ الشيخ - جميع الحقوق محفوظة</p>
+</footer>
+
+<style>
+    .footer {
+        text-align: center;
+        padding: 40px 20px 30px;
+        background: linear-gradient(135deg, rgba(212, 114, 34, 0.15) 0%, rgba(212, 114, 34, 0.05) 100%);
+        border-top: 1px solid rgba(212, 114, 34, 0.2);
+        margin-top: 60px;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 15px;
+    }
+
+    .social-icons a img {
+        width: 40px;
+        height: 40px;
+        filter: drop-shadow(0 0 5px rgba(212, 114, 34, 0.3));
+        transition: all 0.3s ease;
+        border-radius: 50%;
+    }
+
+    .social-icons a:hover img {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 10px rgba(212, 114, 34, 0.6));
+    }
+
+    .footer-text {
+        color: #ccc;
+        font-size: 1em;
+        margin-top: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+        .social-icons a img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+</style>
+
 </body>
 </html>
