@@ -432,86 +432,4 @@
                     <div class="phone-title">اتصل بنا مباشرة</div>
                     <div class="phone-numbers">
                         <a href="tel:0791504450" class="phone-number">0791504450</a>
-                        <a href="tel:0781504450" class="phone-number">0781504450</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Location Section -->
-        <div id="location" class="content-section">
-            <div class="location-section">
-                <h2 class="location-title">Our Location موقعنا</h2>
-                
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14690.687259620455!2d36.0855263!3d32.0786667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDA0JzQzLjIiTiAzNsKwMDUnMTcuNCJF!5e0!3m2!1sen!2sus!4v1689840000000!5m2!1sen!2sus"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-
-                <div class="address-box">
-                    <div class="address-text">📍 الزرقاء - مربع المسلخ</div>
-                    <div class="address-text" style="font-size: 1.2em; color: #ccc;"> Zarqa</div>
-                    <a href="https://maps.app.goo.gl/z1JGNCHDqNyy5JkeA" target="_blank" class="directions-btn">احصل على الاتجاهات</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Review Section -->
-        <div id="review" class="content-section">
-            <div class="review-section">
-                <h2 class="review-title">شاركنا تجربتك</h2>
-                <p class="review-subtitle">رأيك يهمنا! ساعدنا في تحسين خدماتنا</p>
-                
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                
-                <a href="https://search.google.com/local/writereview?placeid=ChIJX1pNZABlGxURZrLabKVzSX8" target="_blank" class="review-btn">
-                    قيمنا على جوجل
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Remove active class from all buttons
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-            
-            // Scroll to top smoothly
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Animation on load
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.nav-btn').forEach((btn, index) => {
-                setTimeout(() => {
-                    btn.style.opacity = '0';
-                    btn.style.transform = 'translateY(20px)';
-                    btn.style.transition = 'all 0.5s ease';
-                    
-                    setTimeout(() => {
-                        btn.style.opacity = '1';
-                        btn.style.transform = 'translateY(0)';
-                    }, 50);
-                }, index * 100);
-            });
-        });
-    </script>
-</body>
-</html>
+                        
