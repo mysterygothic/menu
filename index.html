@@ -19,10 +19,30 @@
         </header>
 
         <div class="nav-buttons">
-            <a href="menu.html" class="nav-btn">المنيو<br>MENU</a>
+            <a href="menu.html" class="nav-btn active">المنيو<br>MENU</a>
             <a href="order.html" class="nav-btn">اطلب الآن<br>ORDER NOW</a>
             <a href="location.html" class="nav-btn">الموقع<br>LOCATION</a>
             <a href="review.html" class="nav-btn">قيمنا<br>REVIEW US</a>
+        </div>
+
+        <div class="content-section">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-image-container">
+                        <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/1.JPG" alt="Menu Page 1" class="menu-image" loading="lazy">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image-container">
+                        <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/2.JPG" alt="Menu Page 2" class="menu-image" loading="lazy">
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-image-container">
+                        <img src="https://raw.githubusercontent.com/mysterygothic/menu/main/3.JPG" alt="Menu Page 3" class="menu-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -43,13 +63,9 @@
 
     <script src="script.js"></script>
     <script>
-        // Redirect to menu page by default
+        // Track menu page view (since menu is now the default content)
         window.addEventListener('load', () => {
-            trackAction('Viewed Home Page');
-            // Redirect to menu page after a short delay to allow tracking
-            setTimeout(() => {
-                window.location.href = 'menu.html';
-            }, 1000);
+            trackAction('Viewed Menu Page');
         });
     </script>
 </body>
