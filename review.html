@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطعم ومطبخ الشيخ</title>
+    <title>قيمنا - مطعم ومطبخ الشيخ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -22,7 +22,18 @@
             <a href="menu.html" class="nav-btn">المنيو<br>MENU</a>
             <a href="order.html" class="nav-btn">اطلب الآن<br>ORDER NOW</a>
             <a href="location.html" class="nav-btn">الموقع<br>LOCATION</a>
-            <a href="review.html" class="nav-btn">قيمنا<br>REVIEW US</a>
+            <a href="review.html" class="nav-btn active">قيمنا<br>REVIEW US</a>
+        </div>
+
+        <div class="content-section">
+            <div class="review-section">
+                <h2 class="review-title">شاركنا تجربتك</h2>
+                <p class="review-subtitle">رأيك يهمنا! ساعدنا في تحسين خدماتنا</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <a href="https://search.google.com/local/writereview?placeid=ChIJX1pNZABlGxURZrLabKVzSX8" target="_blank" class="review-btn" onclick="trackAction('Google Review')">
+                    قيمنا على جوجل
+                </a>
+            </div>
         </div>
     </div>
 
@@ -43,9 +54,9 @@
 
     <script src="script.js"></script>
     <script>
-        // Track home page view
+        // Track review page view
         window.addEventListener('load', () => {
-            trackAction('Viewed Home Page');
+            trackAction('Viewed Review Page');
         });
     </script>
 </body>

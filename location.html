@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطعم ومطبخ الشيخ</title>
+    <title>الموقع - مطعم ومطبخ الشيخ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -21,8 +21,27 @@
         <div class="nav-buttons">
             <a href="menu.html" class="nav-btn">المنيو<br>MENU</a>
             <a href="order.html" class="nav-btn">اطلب الآن<br>ORDER NOW</a>
-            <a href="location.html" class="nav-btn">الموقع<br>LOCATION</a>
+            <a href="location.html" class="nav-btn active">الموقع<br>LOCATION</a>
             <a href="review.html" class="nav-btn">قيمنا<br>REVIEW US</a>
+        </div>
+
+        <div class="content-section">
+            <div class="location-section">
+                <h2 class="location-title">Our Location موقعنا</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14690.687259620455!2d36.0855263!3d32.0786667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDA0JzQzLjIiTiAzNsKwMDUnMTcuNCJF!5e0!3m2!1sen!2sus!4v1689840000000!5m2!1sen!2sus"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="address-box">
+                    <div class="address-text">📍 الزرقاء - مربع المسلخ</div>
+                    <div class="address-text" style="font-size: 1.2em; color: #ccc;"> Zarqa</div>
+                    <a href="https://maps.app.goo.gl/z1JGNCHDqNyy5JkeA" target="_blank" class="directions-btn" onclick="trackAction('Get Directions')">احصل على الاتجاهات</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -43,9 +62,9 @@
 
     <script src="script.js"></script>
     <script>
-        // Track home page view
+        // Track location page view
         window.addEventListener('load', () => {
-            trackAction('Viewed Home Page');
+            trackAction('Viewed Location Page');
         });
     </script>
 </body>
