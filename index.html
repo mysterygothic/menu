@@ -43,9 +43,13 @@
 
     <script src="script.js"></script>
     <script>
-        // Track home page view
+        // Redirect to menu page by default
         window.addEventListener('load', () => {
             trackAction('Viewed Home Page');
+            // Redirect to menu page after a short delay to allow tracking
+            setTimeout(() => {
+                window.location.href = 'menu.html';
+            }, 1000);
         });
     </script>
 </body>
