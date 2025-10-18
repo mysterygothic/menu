@@ -84,8 +84,8 @@ const foodItems = [
     {
         id: 4,
         name: "برياني",
-        description: "برياني مع الأرز المعطر والبهارات الهندية",
-        basePrice: 7,
+        description: "برياني حار بالفلفل الحار والخلطة العدنية السرية لمطعم الشيخ",
+        basePrice: 8,
         category: "biryani",
         image: "picturesfood/breane.jpg",
         meatType: "دجاج",
@@ -94,25 +94,25 @@ const foodItems = [
             { type: "لحم", image: "picturesfood/breane.jpg", priceMultiplier: 1.5 }
         ],
         quantityOptions: [
-            { label: "سدر دجاجة", value: "سدر دجاجة", price: 7 },
-            { label: "دجاجة ونص", value: "دجاجة ونص", price: 10 },
-            { label: "دجاجتين", value: "دجاجتين", price: 14 },
-            { label: "دجاجتين ونص", value: "دجاجتين ونص", price: 17 },
-            { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 21 }
+            { label: "سدر دجاجة", value: "سدر دجاجة", price: 8 },
+            { label: "دجاجة ونص", value: "دجاجة ونص", price: 12 },
+            { label: "دجاجتين", value: "دجاجتين", price: 15 },
+            { label: "دجاجتين ونص", value: "دجاجتين ونص", price: 18 },
+            { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 22 }
         ],
         meatQuantityOptions: [
-            { label: "1 كيلو", value: "1 كيلو", price: 10 },
-            { label: "كيلو ونص", value: "كيلو ونص", price: 15 },
-            { label: "2 كيلو", value: "2 كيلو", price: 20 },
-            { label: "2 كيلو ونص", value: "2 كيلو ونص", price: 25 },
-            { label: "3 كيلو", value: "3 كيلو", price: 30 }
+            { label: "1 كيلو", value: "1 كيلو", price: 13 },
+            { label: "كيلو ونص", value: "كيلو ونص", price: 21 },
+            { label: "2 كيلو", value: "2 كيلو", price: 25 },
+            { label: "2 كيلو ونص", value: "2 كيلو ونص", price: 28 },
+            { label: "3 كيلو", value: "3 كيلو", price: 32 }
         ]
     },
     {
         id: 5,
         name: "كبسة",
-        description: "كبسة مع الأرز والبهارات العربية الأصيلة",
-        basePrice: 6,
+        description: "  كبسة سعودية خاصة بمطعم الشيخ عيش تجربة الكبسة السعودية وأطلب كبسة ..",
+        basePrice: 8,
         category: "kabsa",
         image: "picturesfood/kabsa.jpg",
         meatType: "دجاج",
@@ -121,25 +121,25 @@ const foodItems = [
             { type: "لحم", image: "picturesfood/kabsa.jpg", priceMultiplier: 1.5 }
         ],
         quantityOptions: [
-            { label: "سدر دجاجة", value: "سدر دجاجة", price: 6 },
-            { label: "دجاجة ونص", value: "دجاجة ونص", price: 9 },
-            { label: "دجاجتين", value: "دجاجتين", price: 12 },
-            { label: "دجاجتين ونص", value: "دجاجتين ونص", price: 15 },
-            { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 18 }
+            { label: "سدر دجاجة", value: "سدر دجاجة", price: 8},
+            { label: "دجاجة ونص", value: "دجاجة ونص", price: 12 },
+            { label: "دجاجتين", value: "دجاجتين", price: 15 },
+            { label: "دجاجتين ونص", value: "دجاجتين ونص", price: 18 },
+            { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 22 }
         ],
         meatQuantityOptions: [
-            { label: "1 كيلو", value: "1 كيلو", price: 9 },
-            { label: "كيلو ونص", value: "كيلو ونص", price: 13 },
-            { label: "2 كيلو", value: "2 كيلو", price: 18 },
-            { label: "2 كيلو ونص", value: "2 كيلو ونص", price: 22 },
-            { label: "3 كيلو", value: "3 كيلو", price: 27 }
+            { label: "1 كيلو", value: "1 كيلو", price: 13 },
+            { label: "كيلو ونص", value: "كيلو ونص", price: 21 },
+            { label: "2 كيلو", value: "2 كيلو", price: 25 },
+            { label: "2 كيلو ونص", value: "2 كيلو ونص", price: 28 },
+            { label: "3 كيلو", value: "3 كيلو", price: 32 }
         ]
     },
     {
         id: 6,
         name: "قدرة",
-        description: "قدرة مع الأرز والبهارات التقليدية",
-        basePrice: 6,
+        description: " القدرة الخليلية على أصولها من عند مطعم الشيخ باللحم والدجاج ",
+        basePrice: 8,
         category: "qidra",
         image: "picturesfood/qedra.jpg",
         meatType: "دجاج",
@@ -148,25 +148,25 @@ const foodItems = [
             { type: "لحم", image: "picturesfood/qedra.jpg", priceMultiplier: 1.5 }
         ],
         quantityOptions: [
-            { label: "سدر دجاجة", value: "سدر دجاجة", price: 6 },
-            { label: "دجاجة ونص", value: "دجاجة ونص", price: 9 },
-            { label: "دجاجتين", value: "دجاجتين", price: 12 },
-            { label: "دجاجتين ونص", value: "دجاجتين ونص", price: 15 },
-            { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 18 }
+            { label: "سدر دجاجة", value: "سدر دجاجة", price: 8 },
+            { label: "دجاجة ونص", value: "دجاجة ونص", price: 12 },
+            { label: "دجاجتين", value: "دجاجتين", price: 15 },
+            { label: "دجاجتين ونص", value: "دجاجتين ونص", price: 18 },
+            { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 22 }
         ],
         meatQuantityOptions: [
-            { label: "1 كيلو", value: "1 كيلو", price: 9 },
-            { label: "كيلو ونص", value: "كيلو ونص", price: 13 },
-            { label: "2 كيلو", value: "2 كيلو", price: 18 },
-            { label: "2 كيلو ونص", value: "2 كيلو ونص", price: 22 },
-            { label: "3 كيلو", value: "3 كيلو", price: 27 }
+            { label: "1 كيلو", value: "1 كيلو", price: 13 },
+            { label: "كيلو ونص", value: "كيلو ونص", price: 21 },
+            { label: "2 كيلو", value: "2 كيلو", price: 25 },
+            { label: "2 كيلو ونص", value: "2 كيلو ونص", price: 28 },
+            { label: "3 كيلو", value: "3 كيلو", price: 32 }
         ]
     },
     {
         id: 7,
         name: "فريكة",
-        description: "فريكة مع القمح الأخضر والبهارات",
-        basePrice: 5,
+        description: "فريكة جنين الشهية من مطعم الشيخ بالدجاج واللحم",
+        basePrice: 8,
         category: "freekah",
         image: "picturesfood/freke.jpg",
         meatType: "دجاج",
@@ -175,18 +175,18 @@ const foodItems = [
             { type: "لحم", image: "picturesfood/freke.jpg", priceMultiplier: 1.5 }
         ],
         quantityOptions: [
-            { label: "سدر دجاجة", value: "سدر دجاجة", price: 5 },
-            { label: "دجاجة ونص", value: "دجاجة ونص", price: 7 },
-            { label: "دجاجتين", value: "دجاجتين", price: 10 },
-            { label: "دجاجتين ونص", value: "دجاجتين ونص", price: 12 },
-            { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 15 }
+            { label: "سدر دجاجة", value: "سدر دجاجة", price: 8 },
+            { label: "دجاجة ونص", value: "دجاجة ونص", price: 12 },
+            { label: "دجاجتين", value: "دجاجتين", price: 15 },
+            { label: "دجاجتين ونص", value: "دجاجتين ونص", price: 18 },
+            { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 22 }
         ],
         meatQuantityOptions: [
-            { label: "1 كيلو", value: "1 كيلو", price: 8 },
-            { label: "كيلو ونص", value: "كيلو ونص", price: 12 },
-            { label: "2 كيلو", value: "2 كيلو", price: 16 },
-            { label: "2 كيلو ونص", value: "2 كيلو ونص", price: 20 },
-            { label: "3 كيلو", value: "3 كيلو", price: 24 }
+            { label: "1 كيلو", value: "1 كيلو", price: 13 },
+            { label: "كيلو ونص", value: "كيلو ونص", price: 21 },
+            { label: "2 كيلو", value: "2 كيلو", price: 25 },
+            { label: "2 كيلو ونص", value: "2 كيلو ونص", price: 28 },
+            { label: "3 كيلو", value: "3 كيلو", price: 32 }
         ]
     }
 ];
@@ -536,8 +536,22 @@ async function submitOrder(event) {
     
     // Validate phone number
     const phoneNumber = formData.get('phoneNumber');
-    if (!phoneNumber || phoneNumber.length < 9 || phoneNumber.length > 10) {
+    if (!phoneNumber || phoneNumber.trim() === '') {
+        alert('رقم الهاتف مطلوب! يرجى إدخال رقم هاتف صحيح');
+        document.getElementById('phoneNumber').focus();
+        return;
+    }
+    
+    if (phoneNumber.length < 9 || phoneNumber.length > 10) {
         alert('يرجى إدخال رقم هاتف صحيح (9-10 أرقام)');
+        document.getElementById('phoneNumber').focus();
+        return;
+    }
+    
+    // Check if phone number contains only digits
+    if (!/^\d+$/.test(phoneNumber)) {
+        alert('رقم الهاتف يجب أن يحتوي على أرقام فقط');
+        document.getElementById('phoneNumber').focus();
         return;
     }
     

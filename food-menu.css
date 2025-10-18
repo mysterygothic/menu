@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
 /* Food Menu Specific Styles */
 
 .food-categories {
@@ -9,29 +11,32 @@
 }
 
 .category-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(212, 114, 34, 0.3);
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 1.1em;
-    font-weight: 600;
+    font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+    background: rgba(15, 15, 15, 0.6);
+    border: 1px solid rgba(212, 114, 34, 0.4);
+    color: #f8f9fa;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .category-btn:hover {
-    background: rgba(212, 114, 34, 0.2);
-    border-color: #d47222;
-    transform: translateY(-2px);
+    background: rgba(212, 114, 34, 0.12);
+    border-color: rgba(212, 114, 34, 0.6);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(212, 114, 34, 0.15);
 }
 
 .category-btn.active {
-    background: linear-gradient(135deg, #d47222 0%, #e88230 100%);
-    border-color: #d47222;
-    box-shadow: 0 5px 15px rgba(212, 114, 34, 0.4);
+    background: linear-gradient(135deg, rgba(212, 114, 34, 0.2) 0%, rgba(212, 114, 34, 0.1) 100%);
+    border-color: rgba(212, 114, 34, 0.8);
+    box-shadow: 0 4px 16px rgba(212, 114, 34, 0.2);
 }
 
 .food-items-grid {
@@ -42,19 +47,20 @@
 }
 
 .food-item {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 20px;
+    background: rgba(15, 15, 15, 0.4);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    border: 2px solid rgba(212, 114, 34, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(212, 114, 34, 0.2);
     position: relative;
+    backdrop-filter: blur(10px);
 }
 
 .food-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(212, 114, 34, 0.2);
-    border-color: rgba(212, 114, 34, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(212, 114, 34, 0.15);
+    border-color: rgba(212, 114, 34, 0.3);
 }
 
 .food-item-image {
@@ -69,24 +75,31 @@
 }
 
 .food-item-name {
-    font-size: 1.4em;
-    font-weight: 700;
+    font-family: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
     color: #d47222;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
 }
 
 .food-item-description {
-    color: #ccc;
-    font-size: 0.9em;
-    margin-bottom: 15px;
-    line-height: 1.4;
+    font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+    color: #e9ecef;
+    font-size: 0.95em;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
 }
 
 .food-item-price {
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 15px;
+    font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #f8f9fa;
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
 }
 
 .quantity-selection {
@@ -143,27 +156,29 @@
 }
 
 .meat-btn {
+    font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
     flex: 1;
-    padding: 10px 15px;
-    border: 2px solid rgba(212, 114, 34, 0.3);
+    padding: 12px 16px;
+    border: 1px solid rgba(212, 114, 34, 0.4);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    font-size: 1em;
-    font-weight: 600;
+    background: rgba(15, 15, 15, 0.6);
+    color: #f8f9fa;
+    font-size: 0.95em;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
 }
 
 .meat-btn:hover {
-    background: rgba(212, 114, 34, 0.2);
-    border-color: rgba(212, 114, 34, 0.5);
+    background: rgba(212, 114, 34, 0.12);
+    border-color: rgba(212, 114, 34, 0.6);
 }
 
 .meat-btn.active {
-    background: linear-gradient(135deg, #d47222 0%, #e88230 100%);
-    border-color: #d47222;
-    color: #fff;
+    background: linear-gradient(135deg, rgba(212, 114, 34, 0.2) 0%, rgba(212, 114, 34, 0.1) 100%);
+    border-color: rgba(212, 114, 34, 0.8);
+    color: #d47222;
 }
 
 .food-item-actions {
@@ -441,24 +456,37 @@
 .customer-form .phone-input {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(212, 114, 34, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(212, 114, 34, 0.5);
     border-radius: 10px;
     overflow: hidden;
 }
 
 .customer-form .phone-prefix {
-    background: rgba(212, 114, 34, 0.2);
+    background: rgba(212, 114, 34, 0.4);
     color: #d47222;
     padding: 15px;
     font-weight: 600;
-    border-right: 1px solid rgba(212, 114, 34, 0.3);
+    border-right: 1px solid rgba(212, 114, 34, 0.5);
 }
 
 .customer-form .phone-input input {
     border: none;
     background: transparent;
     flex: 1;
+    padding: 15px;
+    color: #f4f1eb;
+    font-size: 1em;
+}
+
+.customer-form .phone-input input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.customer-form .phone-input:focus-within {
+    border-color: #d47222;
+    box-shadow: 0 0 10px rgba(212, 114, 34, 0.3);
 }
 
 .customer-form .form-actions {
