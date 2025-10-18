@@ -4,8 +4,8 @@ const foodItems = [
         id: 1,
         name: "زرب",
         description: "زرب مع الأرز البسمتي والبهارات الخاصة",
-        basePrice: 8,
-        category: "zarb",
+        basePrice: 5,
+        category: "sudor",
         image: "picturesfood/zarbjaj.jpg",
         meatType: "دجاج",
         meatOptions: [
@@ -13,6 +13,7 @@ const foodItems = [
             { type: "لحم", image: "picturesfood/zarblaham.jpg", priceMultiplier: 1.5 }
         ],
         quantityOptions: [
+            { label: "سدر نصف دجاجة", value: "سدر نصف دجاجة", price: 5 },
             { label: "سدر دجاجة", value: "سدر دجاجة", price: 8 },
             { label: "دجاجة ونص", value: "دجاجة ونص", price: 12 },
             { label: "دجاجتين", value: "دجاجتين", price: 15 },
@@ -20,6 +21,7 @@ const foodItems = [
             { label: "ثلاث دجاجات", value: "ثلاث دجاجات", price: 22 }
         ],
         meatQuantityOptions: [
+            { label: "نصف كيلو", value: "نصف كيلو", price: 8 },
             { label: "1 كيلو", value: "1 كيلو", price: 13 },
             { label: "كيلو ونص", value: "كيلو ونص", price: 21 },
             { label: "2 كيلو", value: "2 كيلو", price: 25 },
@@ -31,8 +33,8 @@ const foodItems = [
         id: 2,
         name: "منسف",
         description: "منسف مع الأرز واللبن واللوز",
-        basePrice: 8,
-        category: "mansaf",
+        basePrice: 5,
+        category: "sudor",
         image: "picturesfood/mansaf.jpg",
         meatType: "دجاج",
         meatOptions: [
@@ -58,8 +60,8 @@ const foodItems = [
         id: 3,
         name: "مندي",
         description: "مندي مع الأرز البسمتي والبهارات",
-        basePrice: 8,
-        category: "mandi",
+        basePrice: 5,
+        category: "sudor",
         image: "picturesfood/mande.jpg",
         meatType: "دجاج",
         meatOptions: [
@@ -85,8 +87,8 @@ const foodItems = [
         id: 4,
         name: "برياني",
         description: "برياني حار بالفلفل الحار والخلطة العدنية السرية لمطعم الشيخ",
-        basePrice: 8,
-        category: "biryani",
+        basePrice: 5,
+        category: "sudor",
         image: "picturesfood/breane.jpg",
         meatType: "دجاج",
         meatOptions: [
@@ -112,8 +114,8 @@ const foodItems = [
         id: 5,
         name: "كبسة",
         description: "  كبسة سعودية خاصة بمطعم الشيخ عيش تجربة الكبسة السعودية وأطلب كبسة ..",
-        basePrice: 8,
-        category: "kabsa",
+        basePrice: 5,
+        category: "sudor",
         image: "picturesfood/kabsa.jpg",
         meatType: "دجاج",
         meatOptions: [
@@ -139,8 +141,8 @@ const foodItems = [
         id: 6,
         name: "قدرة",
         description: " القدرة الخليلية على أصولها من عند مطعم الشيخ باللحم والدجاج ",
-        basePrice: 8,
-        category: "qidra",
+        basePrice: 5,
+        category: "sudor",
         image: "picturesfood/qedra.jpg",
         meatType: "دجاج",
         meatOptions: [
@@ -166,8 +168,8 @@ const foodItems = [
         id: 7,
         name: "فريكة",
         description: "فريكة جنين الشهية من مطعم الشيخ بالدجاج واللحم",
-        basePrice: 8,
-        category: "freekah",
+        basePrice: 5,
+        category: "sudor",
         image: "picturesfood/freke.jpg",
         meatType: "دجاج",
         meatOptions: [
@@ -230,7 +232,7 @@ function renderFoodItems() {
                 <div class="food-item-price">من ${item.basePrice} دينار</div>
                 
                 <div class="meat-selection">
-                    <label>نوع اللحم:</label>
+                    <label>نوع السدر:</label>
                     <div class="meat-options">
                         <button class="meat-btn active" data-type="دجاج" onclick="selectMeatType(${item.id}, 'دجاج')">دجاج</button>
                         <button class="meat-btn" data-type="لحم" onclick="selectMeatType(${item.id}, 'لحم')">لحم</button>
