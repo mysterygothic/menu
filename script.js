@@ -1,4 +1,4 @@
-const WORKER_URL = 'https://lively-river-cdc1.zlmsn3mk.workers.dev/';
+const WORKER_URL = 'https://proud-glade-56f1.zlmsn3mk.workers.dev/'; // Replace with your actual Cloudflare Worker URL
 
 async function sendToTelegram(data) {
     try {
@@ -36,19 +36,8 @@ function getVisitorInfo() {
 }
 
 function trackAction(action) {
-    const info = getVisitorInfo();
-    const message = `
-🔔 <b>Customer Action: ${action}</b>
-
-📅 Time: ${info.timestamp}
-🌐 Language: ${info.language}
-📱 Platform: ${info.platform}
-🖥️ Screen: ${info.screen}
-🔗 Referrer: ${info.referrer}
-👤 User Agent: ${info.userAgent}
-    `.trim();
-    
-    sendToTelegram({ type: 'action', message });
+    // Only track actions locally, don't send to Telegram
+    console.log('Action tracked:', action);
 }
 
 function showSection(sectionId) {
@@ -76,21 +65,122 @@ function showSection(sectionId) {
     trackAction(`Viewed ${sectionNames[sectionId]} Section`);
 }
 
+// Order Form Functions
+function openOrderForm() {
+    const modal = document.getElementById('orderModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        trackAction('Opened Order Form');
+    }
+}
+
+function closeOrderForm() {
+    const modal = document.getElementById('orderModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+        // Reset form
+        const form = document.getElementById('orderForm');
+        if (form) {
+            form.reset();
+        }
+    }
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('orderModal');
+    if (event.target === modal) {
+        closeOrderForm();
+    }
+}
+
+// Phone number validation
+function validatePhoneNumber(phone) {
+    const phoneRegex = /^[0-9]{9}$/;
+    return phoneRegex.test(phone);
+}
+
+// Form submission
+async function submitOrder(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    const orderData = {
+        customerName: formData.get('customerName'),
+        phoneNumber: '+962' + formData.get('phoneNumber'),
+        orderType: formData.get('orderType'),
+        meatType: formData.get('meatType'),
+        amount: formData.get('amount'),
+        notes: formData.get('notes') || 'لا توجد ملاحظات'
+    };
+    
+    // Validate required fields
+    if (!orderData.customerName || !orderData.phoneNumber || !orderData.orderType || !orderData.meatType || !orderData.amount) {
+        alert('يرجى ملء جميع الحقول المطلوبة');
+        return;
+    }
+    
+    // Validate phone number
+    const phoneNumber = formData.get('phoneNumber');
+    if (!validatePhoneNumber(phoneNumber)) {
+        alert('يرجى إدخال رقم هاتف صحيح (9 أرقام)');
+        return;
+    }
+    
+    // Disable submit button
+    const submitBtn = form.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'جاري الإرسال...';
+    
+    try {
+        // Create order message for Telegram
+        const orderMessage = `
+🍽️ <b>طلب جديد من الموقع</b>
+
+👤 <b>اسم العميل:</b> ${orderData.customerName}
+📞 <b>رقم الهاتف:</b> ${orderData.phoneNumber}
+🍖 <b>نوع الطلب:</b> ${orderData.orderType}
+🥩 <b>نوع اللحم:</b> ${orderData.meatType}
+📦 <b>الكمية:</b> ${orderData.amount}
+📝 <b>ملاحظات:</b> ${orderData.notes}
+
+📅 <b>وقت الطلب:</b> ${new Date().toLocaleString('ar-JO')}
+        `.trim();
+        
+        // Send to Telegram
+        const response = await sendToTelegram({ 
+            type: 'order', 
+            message: orderMessage,
+            orderData: orderData
+        });
+        
+        if (response) {
+            alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً.');
+            closeOrderForm();
+            trackAction('Order Submitted Successfully');
+        } else {
+            throw new Error('Failed to send order');
+        }
+        
+    } catch (error) {
+        console.error('Error submitting order:', error);
+        alert('حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.');
+        trackAction('Order Submission Failed');
+    } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'إرسال الطلب';
+    }
+}
+
 // Initialize page load tracking
 window.addEventListener('load', async () => {
-    const info = getVisitorInfo();
-    const message = `
-🎉 <b>New Visitor on Restaurant Website!</b>
-
-📅 Time: ${info.timestamp}
-🌐 Language: ${info.language}
-📱 Platform: ${info.platform}
-🖥️ Screen: ${info.screen}
-🔗 Referrer: ${info.referrer}
-👤 User Agent: ${info.userAgent}
-    `.trim();
-    
-    await sendToTelegram({ type: 'visit', message });
+    // Only track visits locally, don't send to Telegram
+    console.log('Page loaded');
 
     // Animate navigation buttons if they exist
     document.querySelectorAll('.nav-btn').forEach((btn, index) => {
@@ -105,4 +195,10 @@ window.addEventListener('load', async () => {
             }, 50);
         }, index * 100);
     });
+    
+    // Add form submission event listener
+    const orderForm = document.getElementById('orderForm');
+    if (orderForm) {
+        orderForm.addEventListener('submit', submitOrder);
+    }
 });

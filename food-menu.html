@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الطعام - مطعم ومطبخ الشيخ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="food-menu.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>مطعم ومطبخ الشيخ</h1>
+            <div class="decorative-line"></div>
+            <p class="subtitle">Restaurant & Kitchen</p>
+        </header>
+
+        <div class="nav-buttons">
+            <a href="menu.html" class="nav-btn">المنيو<br>MENU</a>
+            <a href="food-menu.html" class="nav-btn active">اطلب من هنا<br>ORDER HERE</a>
+            <a href="order.html" class="nav-btn">اتصل بنا<br>CALL US</a>
+            <a href="location.html" class="nav-btn">الموقع<br>LOCATION</a>
+            <a href="review.html" class="nav-btn">قيمنا<br>REVIEW US</a>
+        </div>
+
+        <!-- Food Categories -->
+        <div class="food-categories">
+            <button class="category-btn active" onclick="filterCategory('all')">الكل</button>
+            <button class="category-btn" onclick="filterCategory('zarb')">زرب</button>
+            <button class="category-btn" onclick="filterCategory('mansaf')">منسف</button>
+            <button class="category-btn" onclick="filterCategory('mandi')">مندي</button>
+            <button class="category-btn" onclick="filterCategory('biryani')">برياني</button>
+            <button class="category-btn" onclick="filterCategory('kabsa')">كبسة</button>
+            <button class="category-btn" onclick="filterCategory('qidra')">قدرة</button>
+            <button class="category-btn" onclick="filterCategory('freekah')">فريكة</button>
+        </div>
+
+        <!-- Food Items Grid -->
+        <div class="food-items-grid" id="foodItemsGrid">
+            <!-- Food items will be populated by JavaScript -->
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart-section" id="cartSection">
+            <div class="cart-header">
+                <h3>سلة الطلبات</h3>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">السلة فارغة</p>
+            </div>
+            <div class="cart-total" id="cartTotal">
+                <div class="total-amount">
+                    <span>المجموع:</span>
+                    <span id="totalPrice">0 دينار</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()" disabled>إرسال الطلب</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Info Modal -->
+    <div id="customerInfoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>معلومات العميل</h2>
+                <span class="close" onclick="closeCustomerModal()">&times;</span>
+            </div>
+            <form id="customerInfoForm" class="customer-form">
+                <div class="form-group">
+                    <label for="customerName">اسم العميل *</label>
+                    <input type="text" id="customerName" name="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phoneNumber">رقم الهاتف *</label>
+                    <div class="phone-input">
+                        <span class="phone-prefix">+962</span>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="0779090114" pattern="[0-9]{9,10}" title="أدخل رقم هاتف صحيح (9-10 أرقام)" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="deliveryAddress">عنوان التوصيل (اختياري)</label>
+                    <textarea id="deliveryAddress" name="deliveryAddress" rows="3" placeholder="أدخل عنوان التوصيل..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeCustomerModal()">إلغاء</button>
+                    <button type="submit" class="submit-btn">إرسال الطلب</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="orderConfirmationModal" class="modal">
+        <div class="modal-content confirmation-modal">
+            <div class="confirmation-header">
+                <div class="success-icon">✓</div>
+                <h2>تم إرسال طلبك بنجاح!</h2>
+                <p class="confirmation-message">شكراً لك! تم استلام طلبك وسيتم التواصل معك قريباً</p>
+            </div>
+            
+            <div class="delivery-info">
+                <div class="delivery-icon">
+                    <img src="picturesfood/delivery.png" alt="Delivery" onerror="this.style.display='none'">
+                </div>
+                <div class="delivery-text">
+                    <h3>سيتم توصيل طلبك قريباً</h3>
+                    <p>فريقنا يعمل على تحضير طلبك بأسرع وقت ممكن</p>
+                </div>
+            </div>
+            
+            <div class="confirmation-actions">
+                <button class="continue-btn" onclick="closeOrderConfirmation()">متابعة التسوق</button>
+                <button class="close-btn" onclick="closeOrderConfirmation()">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://wa.me/962791504450" target="_blank" aria-label="WhatsApp">
+                <img src="whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/alsheikh_resturant/" target="_blank" aria-label="Instagram">
+                <img src="instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/share/1BbwHChiaF/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+                <img src="facebook.png" alt="Facebook">
+            </a>
+        </div>
+        <p class="footer-text">© 2025 مطعم ومطبخ الشيخ - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="food-menu.js"></script>
+    <script>
+        // Track food menu page view
+        window.addEventListener('load', () => {
+            console.log('Viewed Food Menu Page');
+        });
+    </script>
+</body>
+</html>

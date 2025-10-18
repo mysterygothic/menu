@@ -27,12 +27,27 @@
 
         <div class="content-section">
             <div class="order-section">
-                <h2 class="order-title">Call us</h2>
-                <div class="phone-section">
-                    <div class="phone-title">اتصل بنا مباشرة</div>
-                    <div class="phone-numbers">
-                        <a href="tel:0791504450" class="phone-number" onclick="trackAction('Phone Call 1')">0791504450</a>
-                        <a href="tel:0781504450" class="phone-number" onclick="trackAction('Phone Call 2')">0781504450</a>
+                <h2 class="order-title">كيف تريد الطلب؟</h2>
+                
+                <div class="order-options">
+                    <div class="order-option-card">
+                        <div class="option-icon">🍽️</div>
+                        <h3 class="option-title">اطلب من الموقع</h3>
+                        <p class="option-description">تصفح قائمة الطعام واطلب مباشرة من الموقع</p>
+                        <a href="food-menu.html" class="option-btn">اذهب للطلب</a>
+                    </div>
+                    
+                    <div class="order-option-card">
+                        <div class="option-icon">📞</div>
+                        <h3 class="option-title">اتصل بنا مباشرة</h3>
+                        <p class="option-description">اتصل بنا مباشرة واطلب عبر الهاتف</p>
+                        <div class="phone-section">
+                            <div class="phone-title">أرقام الهاتف</div>
+                            <div class="phone-numbers">
+                                <a href="tel:0791504450" class="phone-number">0791504450</a>
+                                <a href="tel:0781504450" class="phone-number">0781504450</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,7 +73,7 @@
     <script>
         // Track order page view
         window.addEventListener('load', () => {
-            trackAction('Viewed Order Page');
+            console.log('Viewed Order Page');
         });
     </script>
 </body>
